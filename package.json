@@ -1,0 +1,84 @@
+{
+  "name": "generate-cname",
+  "description": "Generate the CNAME file for a web project. Is this necessary? No, not at all. A CNAME file is one line and takes a couple seconds to create. The point of this generator is to automate the creation of the CNAME file based on configuration settings, as a small part of a larger build.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/generate/generate-cname",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "generate/generate-cname",
+  "bugs": {
+    "url": "https://github.com/generate/generate-cname/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "generator.js",
+    "index.js",
+    "templates"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "engine-handlebars": "^0.8.2",
+    "helper-prompt": "^1.0.0",
+    "is-valid-app": "^0.3.0"
+  },
+  "devDependencies": {
+    "delete": "^1.0.1",
+    "enquirer": "^1.0.0",
+    "generate": "^0.13.1",
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.1",
+    "npm-install-global": "^1.0.0"
+  },
+  "keywords": [
+    "boilerplate",
+    "build",
+    "cli",
+    "cli-app",
+    "cname",
+    "command-line",
+    "create",
+    "dev",
+    "development",
+    "framework",
+    "front",
+    "frontend",
+    "generate",
+    "generate-generator",
+    "generate-plugin",
+    "generategenerator",
+    "generateplugin",
+    "generator",
+    "init",
+    "initialize",
+    "new",
+    "plugin",
+    "project",
+    "projects",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "template",
+    "templates",
+    "webapp",
+    "yeoman",
+    "yo"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
