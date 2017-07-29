@@ -1,7 +1,7 @@
 {
   "name": "generate-cname",
   "description": "Generate the CNAME file for a web project. Is this necessary? No, not at all. A CNAME file is one line and takes a couple seconds to create. The point of this generator is to automate the creation of the CNAME file based on configuration settings, as a small part of a larger build.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/generate/generate-cname",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "generate/generate-cname",
