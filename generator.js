@@ -2,14 +2,15 @@
 
 var isValid = require('is-valid-app');
 var prompt = require('helper-prompt');
+var Confirm = require('prompt-confirm');
 
 module.exports = function(app) {
   // return if already registered
   if (!isValid(app, 'generate-cname')) return;
 
   /**
-   * Register template engine and prompt helper,
-   * and set the engine as the default.
+   * Register template engine and prompt helper.
+   * Set the engine as the default.
    */
 
   app.engine('hbs', require('engine-handlebars'));
@@ -39,5 +40,28 @@ module.exports = function(app) {
         file.basename = 'CNAME';
         return app.cwd;
       }))
+  });
+
+  /**
+   * Prompt the user to generate a CNAME file.
+   *
+   * ```sh
+   * $ gen cname:prompt
+   * $ gen cname:prompt-cname # alias for plugin usage
+   * ```
+   * @name prompt
+   * @api public
+   */
+
+  app.task('prompt', ['prompt-cname']);
+  app.task('prompt-cname', function(cb) {
+    return new Confirm('Want to generate a CNAME file?')
+      .run().then(function(cname) {
+        app.build(cname ? 'cname' : 'noop', cb);
+      })
+  });
+
+  app.task('noop', {silent: true}, function(cb) {
+    cb();
   });
 };
